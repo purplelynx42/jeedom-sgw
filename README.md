@@ -20,28 +20,28 @@ The jeedomboard has been build by [SolidRun](https://www.solid-run.com) based on
 
 ### Configuration
 <code>
-  locale
-  locale-gen en_US.UTF-8
-  sudo export LANGUAGE="en_US.UTF-8"
-  sudo export LANG="en_US.UTF-8"
-  locale
+locale  
+locale-gen en_US.UTF-8  
+sudo export LANGUAGE="en_US.UTF-8"  
+sudo export LANG="en_US.UTF-8"  
+locale  
 
-  sudo apt update
-  sudo apt dist-upgrade
-  sudo systemctl mask serial-getty@ttymxc0.service
-  sudo echo "EnOceanGW" > /etc/hostname
-  sudo reboot
+sudo apt update  
+sudo apt dist-upgrade  
+sudo systemctl mask serial-getty@ttymxc0.service  
+sudo echo "EnOceanGW" > /etc/hostname  
+sudo reboot  
   
-  sudo apt install ntpdate ntp
-  timedatectl
-  sudo timedatectl set-timezone Europe/Zurich
-  timedatectl
-  ntpq -p
-  date
+sudo apt install ntpdate ntp  
+timedatectl  
+sudo timedatectl set-timezone Europe/Zurich  
+timedatectl  
+ntpq -p  
+date  
   
-  sudo apt install man-db
-  sudo apt install bash-completion
-  sudo apt install vim
+sudo apt install man-db  
+sudo apt install bash-completion  
+sudo apt install vim  
 </code>
   
 
