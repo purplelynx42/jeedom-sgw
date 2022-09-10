@@ -20,7 +20,7 @@ The jeedomboard has been build by [SolidRun](https://www.solid-run.com) based on
 ### Configuration
 ```
 locale
-locale-gen en_US.UTF-8
+sudo locale-gen en_US.UTF-8
 sudo export LANGUAGE="en_US.UTF-8"
 sudo export LANG="en_US.UTF-8"
 locale
