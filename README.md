@@ -1,5 +1,5 @@
-# jeedomboard-sgw
-Jeedomboard as Serial Gateway  
+# Jeedomboard as Serial Gateway
+jeedomboard-sgw
 
 ## Summary
 The goal is to transform an old Jeedom Mini+ hardware equipped with a EnOcean interface on the GPIO port into a simple serial server to share the local this EnOcean interface over the network and access it from an home automation system.
