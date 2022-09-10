@@ -46,8 +46,14 @@ sudo apt install vim
 
 ## Part 2 - Serial Server & Client
 
-### Serial Server with ser2net (Jeedomboard)
+### Serial Server with ser2net (on the Jeedomboard)
 Blah
+```
+sudo apt install ser2net
+```
 
-### Serial Client with socat (Home Automation system)
+### Serial Client with socat (on the Home Automation system, debian-based)
 Blah
+```
+sudo apt install socat
+```
