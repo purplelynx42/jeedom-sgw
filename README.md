@@ -45,15 +45,60 @@ sudo apt install vim
   
 
 ## Part 2 - Serial Server & Client
+### Download the file from my github
+1) Clone, download or ugly copy+paste the four files on your systems.
+2) Move the ser2net* files to Jeedomboard Serial Server.
+3) Move the socat* files to Jeedom Home Automation system.
 
 ### Serial Server with ser2net (on the Jeedomboard)
-Blah
+Customized installation of ser2net:
+- Control the automatic startup with systemd and not init.d.
+- Delayed startup (1min) of ser2net to have the serial interface available.
 ```
 sudo apt install ser2net
+
+sudo systemctl stop ser2net
+sudo mv /etc/init.d/ser2net ~/ser2net.initd.backup
+sudo mv /etc/ser2net.yaml ~/ser2net.yaml.backup
+sudo systemctl daemon-reload
+
+sudo mv ser2net.yaml /etc/default/
+sudo chown root:root /etc/default/ser2net.yaml
+sudo chmod 644 /etc/default/ser2net.yaml
+sudo mv ser2net.service /etc/systemd/system/
+sudo mv ser2net.timer /etc/systemd/system/
+sudo chown root:root /etc/systemd/system/ser2net.*
+sudo chmod 755  /etc/systemd/system/ser2net.*
+
+sudo systemctl daemon-reload
+sudo systemctl enable ser2net.timer
+sudo systemctl start ser2net.service
+```
+Verify if service is running and other troubleshooting commands:
+```
+netstat -lntu
+sudo systemctl status ser2net.timer
+sudo systemctl status ser2net.service
 ```
 
 ### Serial Client with socat (on the Home Automation system, debian-based)
-Blah
+Installation of socat and custom deamonization with systemd.
 ```
 sudo apt install socat
+
+sudo mv socat-ttyenocean0.sh /usr/bin/
+sudo chown root:root /usr/bin/socat-ttyenocean0.sh
+sudo chmod 755 /usr/bin/socat-ttyenocean0.sh
+mv socat-ttyenocean0.service /etc/systemd/system/
+sudo chown root:root /etc/systemd/system/socat-ttyenocean0.service
+sudo chmod 755 /etc/systemd/system/socat-ttyenocean0.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable socat-ttyenocean0.service
+sudo systemctl start socat-ttyenocean0.service
+```
+Verify if service is running and other troubleshooting commands:
+```
+sudo systemctl status socat-ttyenocean0.service
+tail /var/log/socat-ttyenocean0.log
 ```

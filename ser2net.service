@@ -1,0 +1,13 @@
+[Unit]
+Description=ser2net serial port to network proxy
+Documentation=man:ser2net(8)
+ConditionPathExists=/usr/sbin/ser2net
+
+[Service]
+ExecStart=/usr/sbin/ser2net -n -c /etc/default/ser2net.yaml -P /run/ser2net.pid
+Type=exec
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

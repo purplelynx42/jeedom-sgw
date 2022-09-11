@@ -1,0 +1,9 @@
+[Unit]
+Description=Bootup delay for ser2net service
+
+[Timer]
+OnBootSec=1min
+Unit=ser2net.service
+
+[Install]
+WantedBy=multi-user.target

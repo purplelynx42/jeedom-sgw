@@ -1,0 +1,13 @@
+[Unit]
+Description=socat proxy for ttyEnOcean0
+Documentation=man:socat(8)
+After=network.target
+ConditionPathExists=/usr/bin/socat
+
+[Service]
+ExecStart=/usr/bin/socat-ttyenocean0.sh
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
