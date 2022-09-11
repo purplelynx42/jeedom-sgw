@@ -19,11 +19,13 @@ The jeedomboard has been build by [SolidRun](https://www.solid-run.com) based on
 
 ### Configuration
 ```
+sudo -s
 locale
-sudo locale-gen en_US.UTF-8
-sudo export LANGUAGE="en_US.UTF-8"
-sudo export LANG="en_US.UTF-8"
+locale-gen en_US.UTF-8
+export LANGUAGE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 locale
+exit
 
 sudo apt update
 sudo apt dist-upgrade
